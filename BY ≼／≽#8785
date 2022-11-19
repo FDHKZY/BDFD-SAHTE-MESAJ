@@ -1,0 +1,23 @@
+(prefix)sahte-mesaj
+
+```
+
+$nomention
+
+$allowMention
+
+$onlyIf[$mentioned[1]!=;Hangi kullanıcıya sahte mesaj attırmak istersin?]
+
+$onlyIf[$noMentionMessage!=;Kullanıcıya ne dedirtmek istersin?]
+
+$onlyIf[$mentionedRoles[1]==;Rollere ping attıranazsın!]
+
+$var[webhookURL;$webhookCreate[$channelID;Cool Webhook;]]
+
+$webhookContent[$var[webhookURL];$replaceText[$replaceText[$replaceText[$message;$message[1];;-1];everyone;`everyone`;-1];here;`here`;-1]]
+
+$webhookUsername[$var[webhookURL];$nickname[$mentioned[1;yes]]]
+
+$webhookAvatarURL[$var[webhookURL];$userAvatar[$mentioned[1;yes]]]
+
+$onlyBotPerms[managewebhooks; `Webhookları Yönet` yetkisi vermen gerekiyor.]```
